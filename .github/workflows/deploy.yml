@@ -28,16 +28,11 @@ jobs:
       - name: Setup @antfu/ni
         run: npm i -g @antfu/ni
 
-      - name: Install palywright-chromium for pdf exporting
-        run: npm i -g -D playwright-chromium
-      - name: Insatll slidev cli
-        run: npm i -g @slidev/cli
-        
       - name: Install dependencies
         run: nci
 
       - name: Build
-        run: slidev build --base /${{github.event.repository.name}}/
+        run: nr build --base /${{github.event.repository.name}}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
